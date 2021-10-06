@@ -1,7 +1,8 @@
+@import url("https://fonts.googleapis.com/css2?family=Akronim&family=Saira:wght@100;300;400&display=swap");
 * {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  font-family: "Saira", sans-serif;
 }
 
 body {
@@ -13,10 +14,9 @@ body::before {
   position: absolute;
   width: 100%;
   height: 100%;
-  background-image: radial-gradient(circle farthest-corner at 30% -12.9%, #4a626e 0.3%, #1e2130 90.2%);
+  background-image: radial-gradient(circlefarthest-corner at 30% -12.9%, #4a626e 0.3%, #1e2130 90.2%);
   -webkit-clip-path: circle(15% at 90% 20%);
           clip-path: circle(15% at 90% 20%);
-  z-index: -1;
 }
 
 .space-page {
@@ -46,6 +46,12 @@ header nav {
   font-size: 1.3rem;
 }
 
+header nav h4 {
+  font: 2.5rem 'Akronim';
+  color: #04d361;
+  text-shadow: 2px 2px 5px #04d361;
+}
+
 header nav ul {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -57,12 +63,41 @@ header nav ul {
 
 header nav ul li {
   list-style: none;
-  cursor: pointer;
   margin: 0 2rem;
 }
 
-header nav ul li:hover {
-  color: #fff;
+header nav ul li a {
+  display: block;
+  text-decoration: none;
+  position: relative;
+  color: #B5B5B5;
+  z-index: 1;
+  cursor: pointer;
+}
+
+header nav ul li a::before {
+  content: '';
+  position: absolute;
+  bottom: -5%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 0;
+  height: 1px;
+  background-color: #04d361;
+  opacity: 0;
+  z-index: -1;
+  -webkit-transition: .7s ease;
+  transition: .7s ease;
+}
+
+header nav ul li a:hover {
+  color: #FFFFFF;
+}
+
+header nav ul li a:hover::before {
+  width: 105%;
+  opacity: 1;
 }
 
 main {
@@ -83,30 +118,36 @@ main .space-page {
           align-items: center;
 }
 
-main .space-page .me {
+main .space-page .about {
   width: 80vw;
 }
 
-main .space-page .me h1 {
-  font-size: 1.5rem;
+main .space-page .about h1 {
+  font-size: 1.2rem;
+  font-weight: 100;
   letter-spacing: 1px;
   color: #E8E8E8;
 }
 
-main .space-page .me h1 span {
-  color: #8844EE;
-  font-size: 2rem;
+main .space-page .about h1 span {
+  color: #04d361;
+  font-size: 4.5rem;
+  font-weight: 400;
+  line-height: 120%;
+  margin: 1rem 0 1.5rem 1.5rem;
+  display: block;
 }
 
-main .space-page .me p {
-  font-size: 1.3rem;
+main .space-page .about p {
+  font-size: 1.4rem;
   color: #E8E8E8;
   letter-spacing: 1px;
+  font-weight: 100;
 }
 
 main .space-page .ilustration {
   position: absolute;
-  right: 0;
-  top: 0;
+  right: 5%;
+  top: 10%;
 }
 /*# sourceMappingURL=style.css.map */
