@@ -3,36 +3,35 @@
   margin: 0;
   padding: 0;
   font-family: "Saira", sans-serif;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 body {
   background-color: #151515;
-}
-
-body::before {
-  content: '';
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-image: radial-gradient(circlefarthest-corner at 30% -12.9%, #4a626e 0.3%, #1e2130 90.2%);
-  -webkit-clip-path: circle(15% at 90% 20%);
-          clip-path: circle(15% at 90% 20%);
+  color: #E8E8E8;
 }
 
 .space-page {
-  max-width: 1300px;
+  max-width: 1400px;
   height: 100%;
   margin: 0 auto;
 }
 
-header {
+@media screen and (max-width: 1500px) {
+  .space-page {
+    max-width: 1150px;
+  }
+}
+
+#home header {
   height: 10vh;
   font-size: 1.5rem;
   background-color: #2E2E2E;
   color: #FFFFFF;
 }
 
-header nav {
+#home header nav {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -46,13 +45,13 @@ header nav {
   font-size: 1.3rem;
 }
 
-header nav h4 {
+#home header nav h4 {
   font: 2.5rem 'Akronim';
   color: #04d361;
   text-shadow: 2px 2px 5px #04d361;
 }
 
-header nav ul {
+#home header nav ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -61,12 +60,12 @@ header nav ul {
           justify-content: space-evenly;
 }
 
-header nav ul li {
+#home header nav ul li {
   list-style: none;
   margin: 0 2rem;
 }
 
-header nav ul li a {
+#home header nav ul li a {
   display: block;
   text-decoration: none;
   position: relative;
@@ -75,7 +74,7 @@ header nav ul li a {
   cursor: pointer;
 }
 
-header nav ul li a::before {
+#home header nav ul li a::before {
   content: '';
   position: absolute;
   bottom: -5%;
@@ -91,16 +90,16 @@ header nav ul li a::before {
   transition: .7s ease;
 }
 
-header nav ul li a:hover {
+#home header nav ul li a:hover {
   color: #FFFFFF;
 }
 
-header nav ul li a:hover::before {
+#home header nav ul li a:hover::before {
   width: 105%;
   opacity: 1;
 }
 
-main {
+#home main {
   color: #FFFFFF;
   position: relative;
   height: 90vh;
@@ -109,7 +108,7 @@ main {
   display: flex;
 }
 
-main .space-page {
+#home main .space-page {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -118,18 +117,18 @@ main .space-page {
           align-items: center;
 }
 
-main .space-page .about {
+#home main .space-page .about {
   width: 80vw;
 }
 
-main .space-page .about h1 {
+#home main .space-page .about h1 {
   font-size: 1.2rem;
   font-weight: 100;
   letter-spacing: 1px;
   color: #E8E8E8;
 }
 
-main .space-page .about h1 span {
+#home main .space-page .about h1 span {
   color: #04d361;
   font-size: 4.5rem;
   font-weight: 400;
@@ -138,16 +137,20 @@ main .space-page .about h1 span {
   display: block;
 }
 
-main .space-page .about p {
+#home main .space-page .about p {
   font-size: 1.4rem;
   color: #E8E8E8;
   letter-spacing: 1px;
   font-weight: 100;
 }
 
-main .space-page .ilustration {
+#home main .space-page .ilustration {
   position: absolute;
   right: 5%;
   top: 10%;
+}
+
+#about {
+  height: 45vh;
 }
 /*# sourceMappingURL=style.css.map */
