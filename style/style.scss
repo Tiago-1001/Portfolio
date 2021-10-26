@@ -7,6 +7,7 @@ $white: #FFFFFF;
 $white-two: #E8E8E8;
 $gray: #B5B5B5;
 $green-one: #04d361;
+$black-one: #151515;
 
 * {
   margin: 0;
@@ -21,7 +22,7 @@ html {
 
 body {
   // background-color: #E4E4E4;
-  background-color: #151515;
+  background-color: $black-one;
   color: $white-two;
 }
 
@@ -43,6 +44,11 @@ body {
   img {
     width: 100%;
     height: 100%;
+    opacity: .7;
+
+    &:hover {
+      opacity: 1;
+    }
   }
 }
 
@@ -88,6 +94,7 @@ body {
           a {
             display: block;
             text-decoration: none;
+            font-size: 1.2rem;
   
             position: relative;
   
@@ -156,6 +163,10 @@ body {
             margin: 1rem 0 1.5rem 1.5rem;
   
             display: block;
+
+            @media (max-width: 1400px) {
+              font-size: 3.5rem;
+            }
           }
         }
   
@@ -164,6 +175,10 @@ body {
             color: $white-two;
             letter-spacing: 1px;
             font-weight: 100;
+
+            @media (max-width: 1400px) {
+              font-size: 1.1rem;
+            }
         }
       }
       
@@ -171,11 +186,65 @@ body {
         position: absolute;
         right: 5%;
         top: 10%;
+
+        @media (max-width: 1400px) {
+          img {
+            height: 450px;
+            width: 470px;
+          }
+        }
       }
     }
   }
 }
 
 #about {
-  height: 45vh;
+  height: 70vh;
+
+  @media (max-width: 1400px) {
+    height: 100vh;
+  }
+
+  .space-page {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+  }
+
+  .imageMe {
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background: $green-one;
+    height: 325px;
+    width: 325px;
+    border-radius: 50%;
+    z-index: -1;
+    padding: 15px;
+
+    img {
+      border-radius: 50%;
+      height: 320px;
+      border: 6px solid $black-one;
+      position: absolute;
+      left: 2px;
+    }
+  }
+
+  .textAboutMe {   
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      font-weight: 400;
+      display: inline-block;
+    }
+
+    p {
+      line-height: 30px;
+      font-size: 1.1rem;
+      color: $gray;
+      margin-left: .7rem;
+    }
+  }
 }

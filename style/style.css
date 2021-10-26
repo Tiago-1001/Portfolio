@@ -34,6 +34,11 @@ body {
 .goToTop img {
   width: 100%;
   height: 100%;
+  opacity: .7;
+}
+
+.goToTop img:hover {
+  opacity: 1;
 }
 
 .space-page {
@@ -92,6 +97,7 @@ body {
 #home header nav ul li a {
   display: block;
   text-decoration: none;
+  font-size: 1.2rem;
   position: relative;
   color: #B5B5B5;
   z-index: 1;
@@ -161,11 +167,23 @@ body {
   display: block;
 }
 
+@media (max-width: 1400px) {
+  #home main .space-page .about h1 span {
+    font-size: 3.5rem;
+  }
+}
+
 #home main .space-page .about p {
   font-size: 1.4rem;
   color: #E8E8E8;
   letter-spacing: 1px;
   font-weight: 100;
+}
+
+@media (max-width: 1400px) {
+  #home main .space-page .about p {
+    font-size: 1.1rem;
+  }
 }
 
 #home main .space-page .ilustration {
@@ -174,7 +192,69 @@ body {
   top: 10%;
 }
 
+@media (max-width: 1400px) {
+  #home main .space-page .ilustration img {
+    height: 450px;
+    width: 470px;
+  }
+}
+
 #about {
-  height: 45vh;
+  height: 70vh;
+}
+
+@media (max-width: 1400px) {
+  #about {
+    height: 100vh;
+  }
+}
+
+#about .space-page {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 2fr;
+      grid-template-columns: 1fr 2fr;
+}
+
+#about .imageMe {
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: relative;
+  background: #04d361;
+  height: 325px;
+  width: 325px;
+  border-radius: 50%;
+  z-index: -1;
+  padding: 15px;
+}
+
+#about .imageMe img {
+  border-radius: 50%;
+  height: 320px;
+  border: 6px solid #151515;
+  position: absolute;
+  left: 2px;
+}
+
+#about .textAboutMe h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  font-weight: 400;
+  display: inline-block;
+}
+
+#about .textAboutMe p {
+  line-height: 30px;
+  font-size: 1.1rem;
+  color: #B5B5B5;
+  margin-left: .7rem;
 }
 /*# sourceMappingURL=style.css.map */
