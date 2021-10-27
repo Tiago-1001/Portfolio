@@ -18,6 +18,13 @@ $black-one: #151515;
 
 html {
   scroll-behavior: smooth;
+
+  @media (max-width: 1200px) {
+    font-size: 13px;
+  }
+  @media (max-width: 1000px) {
+    font-size: 12px;
+  }
 }
 
 body {
@@ -52,36 +59,38 @@ body {
   }
 }
 
-.space-page {
-  max-width: 1400px;
-  height: 100%;
-  margin: 0 auto;
+header {
+  background-color: #2E2E2E;
+  width: 100%;
+  height: 10vh;
+  color: $white;
 
-  @media screen and (max-width: 1500px) {
-    max-width: 1150px;
-  }
-}
+  position: fixed;
+  top: 0;
+  z-index: 9;
 
-#home {
-  header {
-    height: 10vh;
-    font-size: 1.5rem;
+  .headerContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 90%;
+    height: 100%;
   
-    background-color: #2E2E2E;
-    color: $white;
+  
+    h4 {
+      font: 2.5rem 'Akronim';
+      color: $green-one;
+      text-shadow:  2px 2px 5px$green-one;
+    }
   
     nav {
       display: flex;
-      justify-content: space-between;
       align-items: center;
       height: 100%;
       font-size: 1.3rem;
-  
-      h4 {
-        font: 2.5rem 'Akronim';
-        color: $green-one;
-        text-shadow:  2px 2px 5px$green-one;
-      }
   
       ul {
         display: flex;
@@ -94,7 +103,7 @@ body {
           a {
             display: block;
             text-decoration: none;
-            font-size: 1.2rem;
+            font-size: 1.3rem;
   
             position: relative;
   
@@ -134,117 +143,151 @@ body {
       }
     }
   }
-  
+}
+
+#home {
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 90%;
+
   main {
     color: $white;
     position: relative;
-    height: 90vh;
-    display: flex;
-  
-    .space-page {
+    height: 100vh;
+    
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    
+    h1 {
+      font-size: 1.2rem;
+      font-weight: 100;
+      letter-spacing: 1px;
+      color: $white-two;
+
+      span {
+        color: $green-one;
+        font-size: 4.5rem;
+        font-weight: 400;
+        line-height: 5rem;
+
+        margin: 1rem 0 1.5rem 1.5rem;
+
+        display: block;
+      }
+    }
+
+    p {
+        font-size: 1.4rem;
+        color: $white-two;
+        letter-spacing: 1px;
+        font-weight: 100;
+    }
+    
+    .ilustration {
       display: flex;
-      align-items: center;
-  
-      .about {
-        width:  80vw;
-      
-        h1 {
-          font-size: 1.2rem;
-          font-weight: 100;
-          letter-spacing: 1px;
-          color: $white-two;
-  
-          span {
-            color: $green-one;
-            font-size: 4.5rem;
-            font-weight: 400;
-            line-height: 120%;
-  
-            margin: 1rem 0 1.5rem 1.5rem;
-  
-            display: block;
+      justify-content: flex-end;
 
-            @media (max-width: 1400px) {
-              font-size: 3.5rem;
-            }
-          }
-        }
-  
-        p {
-            font-size: 1.4rem;
-            color: $white-two;
-            letter-spacing: 1px;
-            font-weight: 100;
+      img {
+        width: 37.5rem;
+      }
+    }
 
-            @media (max-width: 1400px) {
-              font-size: 1.1rem;
-            }
+    @media (max-width: 900px) {
+      display: flex;
+      justify-content: center;
+
+      h1 {
+        font-size: 1.5em;
+
+        span {
+          font-size: 3em;
+          margin: 2rem 0 3rem 3rem;
         }
       }
-      
-      .ilustration {
-        position: absolute;
-        right: 5%;
-        top: 10%;
 
-        @media (max-width: 1400px) {
-          img {
-            height: 450px;
-            width: 470px;
-          }
-        }
+      p {
+        font-size: 1.5em;
+      }
+
+      .ilustration {
+        display: none;
       }
     }
   }
 }
+  
+  
 
 #about {
-  height: 70vh;
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 90%;
 
-  @media (max-width: 1400px) {
-    height: 100vh;
-  }
-
-  .space-page {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-  }
+  display: grid;
+  grid-template-columns: 25rem 2fr;
 
   .imageMe {
-    margin: 0 auto;
     display: flex;
     align-items: center;
-    justify-content: center;
     position: relative;
     background: $green-one;
-    height: 325px;
-    width: 325px;
+    height: 21.25rem;
+    width: 21.25rem;
     border-radius: 50%;
     z-index: -1;
-    padding: 15px;
+    padding: .9rem;
 
     img {
       border-radius: 50%;
-      height: 320px;
-      border: 6px solid $black-one;
+      border: .4rem solid $black-one;
       position: absolute;
-      left: 2px;
+      left: .15rem;
+      height: 21rem;
+      width: 21rem;
     }
   }
 
-  .textAboutMe {   
+  .textAboutMe {
     h1 {
       font-size: 2rem;
-      margin-bottom: 1rem;
+      letter-spacing: .15rem;
       font-weight: 400;
+      margin-left: -2rem;
+
       display: inline-block;
     }
 
     p {
-      line-height: 30px;
-      font-size: 1.1rem;
       color: $gray;
-      margin-left: .7rem;
+      line-height: 2rem;
+      font-size: 1.1rem;
+      margin: 1rem;
+
+      &:last-of-type {
+        margin-left: -2rem;
+      }
+    }
+  }
+
+  @media screen and (max-width: 1100px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+    .imageMe {
+      display: none;
+    }
+
+    .textAboutMe {
+      h1, p {
+        margin: 0;
+
+        &:last-of-type {
+          margin: 0;
+        }
+      }
     }
   }
 }
