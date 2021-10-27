@@ -9,18 +9,7 @@
 
 html {
   scroll-behavior: smooth;
-}
-
-@media (max-width: 1200px) {
-  html {
-    font-size: 13px;
-  }
-}
-
-@media (max-width: 1000px) {
-  html {
-    font-size: 12px;
-  }
+  font-size: 62.5%;
 }
 
 body {
@@ -53,8 +42,16 @@ body {
   opacity: 1;
 }
 
+.line {
+  height: 2px;
+  width: 100%;
+  background: #242629;
+  margin-bottom: 5rem;
+  margin-top: 5rem;
+}
+
 header {
-  background-color: #2E2E2E;
+  background-color: #242629;
   width: 100%;
   height: 10vh;
   color: #FFFFFF;
@@ -80,7 +77,7 @@ header .headerContainer {
 }
 
 header .headerContainer h4 {
-  font: 2.5rem 'Akronim';
+  font: 4.5rem 'Akronim';
   color: #04d361;
   text-shadow: 2px 2px 5px #04d361;
 }
@@ -93,7 +90,6 @@ header .headerContainer nav {
       -ms-flex-align: center;
           align-items: center;
   height: 100%;
-  font-size: 1.3rem;
 }
 
 header .headerContainer nav ul {
@@ -107,13 +103,13 @@ header .headerContainer nav ul {
 
 header .headerContainer nav ul li {
   list-style: none;
-  margin: 0 2rem;
+  margin: 0 3rem;
 }
 
 header .headerContainer nav ul li a {
   display: block;
   text-decoration: none;
-  font-size: 1.3rem;
+  font-size: 1.8rem;
   position: relative;
   color: #B5B5B5;
   z-index: 1;
@@ -132,8 +128,8 @@ header .headerContainer nav ul li a::before {
   background-color: #04d361;
   opacity: 0;
   z-index: -1;
-  -webkit-transition: .7s ease;
-  transition: .7s ease;
+  -webkit-transition: .5s ease;
+  transition: .5s ease;
 }
 
 header .headerContainer nav ul li a:hover {
@@ -165,7 +161,7 @@ header .headerContainer nav ul li a:hover::before {
 }
 
 #home main h1 {
-  font-size: 1.2rem;
+  font-size: 1.8rem;
   font-weight: 100;
   letter-spacing: 1px;
   color: #E8E8E8;
@@ -173,15 +169,15 @@ header .headerContainer nav ul li a:hover::before {
 
 #home main h1 span {
   color: #04d361;
-  font-size: 4.5rem;
+  font-size: 5.5rem;
   font-weight: 400;
-  line-height: 5rem;
-  margin: 1rem 0 1.5rem 1.5rem;
+  line-height: 7rem;
+  margin: 2rem 0 3rem 3rem;
   display: block;
 }
 
 #home main p {
-  font-size: 1.4rem;
+  font-size: 1.8rem;
   color: #E8E8E8;
   letter-spacing: 1px;
   font-weight: 100;
@@ -197,7 +193,7 @@ header .headerContainer nav ul li a:hover::before {
 }
 
 #home main .ilustration img {
-  width: 37.5rem;
+  width: 58rem;
 }
 
 @media (max-width: 900px) {
@@ -230,11 +226,12 @@ header .headerContainer nav ul li a:hover::before {
   width: 90%;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 25rem 2fr;
-      grid-template-columns: 25rem 2fr;
+  -ms-grid-columns: 1fr 1.5fr;
+      grid-template-columns: 1fr 1.5fr;
 }
 
 #about .imageMe {
+  margin: 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -242,43 +239,41 @@ header .headerContainer nav ul li a:hover::before {
       -ms-flex-align: center;
           align-items: center;
   position: relative;
-  background: #04d361;
-  height: 21.25rem;
-  width: 21.25rem;
-  border-radius: 50%;
-  z-index: -1;
-  padding: .9rem;
+  height: 34.5rem;
+  width: 34.5rem;
 }
 
 #about .imageMe img {
-  border-radius: 50%;
-  border: 0.4rem solid #151515;
-  position: absolute;
-  left: .15rem;
-  height: 21rem;
-  width: 21rem;
+  border-radius: 5%;
+  width: 100%;
+}
+
+@media screen and (max-width: 1200px) {
+  #about .imageMe {
+    height: 30.5rem;
+    width: 30.5rem;
+  }
+}
+
+#about .textAboutMe {
+  max-width: 700px;
 }
 
 #about .textAboutMe h1 {
-  font-size: 2rem;
-  letter-spacing: .15rem;
+  font-size: 3rem;
+  letter-spacing: .2rem;
   font-weight: 400;
-  margin-left: -2rem;
   display: inline-block;
 }
 
 #about .textAboutMe p {
   color: #B5B5B5;
-  line-height: 2rem;
-  font-size: 1.1rem;
-  margin: 1rem;
+  line-height: 3.2rem;
+  font-size: 1.6rem;
+  margin: 1.6rem 1.6rem 1.6rem 0;
 }
 
-#about .textAboutMe p:last-of-type {
-  margin-left: -2rem;
-}
-
-@media screen and (max-width: 1100px) {
+@media screen and (max-width: 900px) {
   #about {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -292,12 +287,6 @@ header .headerContainer nav ul li a:hover::before {
   }
   #about .imageMe {
     display: none;
-  }
-  #about .textAboutMe h1, #about .textAboutMe p {
-    margin: 0;
-  }
-  #about .textAboutMe h1:last-of-type, #about .textAboutMe p:last-of-type {
-    margin: 0;
   }
 }
 /*# sourceMappingURL=style.css.map */

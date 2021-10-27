@@ -6,8 +6,12 @@ $font: 'Saira', sans-serif;
 $white: #FFFFFF;
 $white-two: #E8E8E8;
 $gray: #B5B5B5;
-$green-one: #04d361;
-$black-one: #151515;
+$green: #04d361;
+$background: #151515;
+$cardBackground: #242629;
+$purple: #7f5af0;
+$stroke: #010101;
+
 
 * {
   margin: 0;
@@ -18,18 +22,12 @@ $black-one: #151515;
 
 html {
   scroll-behavior: smooth;
-
-  @media (max-width: 1200px) {
-    font-size: 13px;
-  }
-  @media (max-width: 1000px) {
-    font-size: 12px;
-  }
+  font-size: 62.5%;
 }
 
 body {
   // background-color: #E4E4E4;
-  background-color: $black-one;
+  background-color: $background;
   color: $white-two;
 }
 
@@ -59,8 +57,16 @@ body {
   }
 }
 
+.line {
+  height: 2px;
+  width: 100%;
+  background: $cardBackground;
+  margin-bottom: 5rem;
+  margin-top: 5rem;
+}
+
 header {
-  background-color: #2E2E2E;
+  background-color: $cardBackground;
   width: 100%;
   height: 10vh;
   color: $white;
@@ -81,29 +87,28 @@ header {
   
   
     h4 {
-      font: 2.5rem 'Akronim';
-      color: $green-one;
-      text-shadow:  2px 2px 5px$green-one;
+      font: 4.5rem 'Akronim';
+      color: $green;
+      text-shadow:  2px 2px 5px$green;
     }
   
     nav {
       display: flex;
       align-items: center;
       height: 100%;
-      font-size: 1.3rem;
-  
+
       ul {
         display: flex;
         justify-content: space-evenly;
               
         li {
           list-style: none;
-          margin: 0 2rem;
+          margin: 0 3rem;
   
           a {
             display: block;
             text-decoration: none;
-            font-size: 1.3rem;
+            font-size: 1.8rem;
   
             position: relative;
   
@@ -122,12 +127,12 @@ header {
               width: 0;
               height: 1px;
               
-              background-color: $green-one;
+              background-color: $green;
               opacity: 0;
     
               z-index: -1;
     
-              transition: .7s ease;
+              transition: .5s ease;
             }
     
             &:hover {
@@ -160,25 +165,25 @@ header {
     align-items: center;
     
     h1 {
-      font-size: 1.2rem;
+      font-size: 1.8rem;
       font-weight: 100;
       letter-spacing: 1px;
       color: $white-two;
 
       span {
-        color: $green-one;
-        font-size: 4.5rem;
+        color: $green;
+        font-size: 5.5rem;
         font-weight: 400;
-        line-height: 5rem;
+        line-height: 7rem;
 
-        margin: 1rem 0 1.5rem 1.5rem;
+        margin: 2rem 0 3rem 3rem;
 
         display: block;
       }
     }
 
     p {
-        font-size: 1.4rem;
+        font-size: 1.8rem;
         color: $white-two;
         letter-spacing: 1px;
         font-weight: 100;
@@ -189,7 +194,7 @@ header {
       justify-content: flex-end;
 
       img {
-        width: 37.5rem;
+        width: 58rem;
       }
     }
 
@@ -216,8 +221,6 @@ header {
     }
   }
 }
-  
-  
 
 #about {
   max-width: 1400px;
@@ -225,69 +228,53 @@ header {
   width: 90%;
 
   display: grid;
-  grid-template-columns: 25rem 2fr;
+  grid-template-columns: 1fr 1.5fr;
 
   .imageMe {
+    margin: 0 auto;
     display: flex;
     align-items: center;
     position: relative;
-    background: $green-one;
-    height: 21.25rem;
-    width: 21.25rem;
-    border-radius: 50%;
-    z-index: -1;
-    padding: .9rem;
+    height: 34.5rem;
+    width: 34.5rem;
 
     img {
-      border-radius: 50%;
-      border: .4rem solid $black-one;
-      position: absolute;
-      left: .15rem;
-      height: 21rem;
-      width: 21rem;
+      border-radius: 5%;
+      width: 100%;
+    }
+
+    @media screen and (max-width: 1200px) {
+      height: 30.5rem;
+      width: 30.5rem;
     }
   }
 
   .textAboutMe {
+    max-width: 700px;
+
     h1 {
-      font-size: 2rem;
-      letter-spacing: .15rem;
+      font-size: 3rem;
+      letter-spacing: .2rem;
       font-weight: 400;
-      margin-left: -2rem;
 
       display: inline-block;
     }
 
     p {
       color: $gray;
-      line-height: 2rem;
-      font-size: 1.1rem;
-      margin: 1rem;
-
-      &:last-of-type {
-        margin-left: -2rem;
-      }
+      line-height: 3.2rem;
+      font-size: 1.6rem;
+      margin: 1.6rem 1.6rem 1.6rem 0;
     }
   }
 
-  @media screen and (max-width: 1100px) {
+  @media screen and (max-width: 900px) {
     display: flex;
     align-items: center;
     justify-content: center;
 
-
     .imageMe {
       display: none;
-    }
-
-    .textAboutMe {
-      h1, p {
-        margin: 0;
-
-        &:last-of-type {
-          margin: 0;
-        }
-      }
     }
   }
 }
