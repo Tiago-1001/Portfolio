@@ -23,6 +23,10 @@ $stroke: #010101;
 html {
   scroll-behavior: smooth;
   font-size: 62.5%;
+
+  @media (max-width: 768px) {
+    font-size: 50%;
+  }
 }
 
 body {
@@ -89,7 +93,17 @@ header {
     h4 {
       font: 4.5rem 'Akronim';
       color: $green;
-      text-shadow:  2px 2px 5px$green;
+      text-shadow:  2px 2px 5px $green;
+    }
+
+    .navMobile {
+      display: none;
+
+      @media (max-width: 900px) {
+        display: flex;
+
+        cursor: pointer;
+      }
     }
   
     nav {
@@ -103,7 +117,7 @@ header {
               
         li {
           list-style: none;
-          margin: 0 3rem;
+          margin-left: 6rem;
   
           a {
             display: block;
@@ -142,9 +156,13 @@ header {
                 width: 105%;
                 opacity: 1;
               }
-            }
+            }            
           }
         }
+      }
+
+      @media (max-width: 900px) {
+        display: none;
       }
     }
   }
@@ -163,7 +181,7 @@ header {
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
-    
+
     h1 {
       font-size: 1.8rem;
       font-weight: 100;
@@ -198,22 +216,40 @@ header {
       }
     }
 
-    @media (max-width: 900px) {
+    @media (max-width: 1100px) {
       display: flex;
       justify-content: center;
+      justify-content: space-between;
 
-      h1 {
-        font-size: 1.5em;
+      h1, p {
+        font-size: 1.5rem;
 
         span {
-          font-size: 3em;
+          font-size: 3rem;
           margin: 2rem 0 3rem 3rem;
         }
       }
 
-      p {
-        font-size: 1.5em;
+      .ilustration {
+        img {
+          width: 50rem;
+        }
       }
+    }
+
+    @media (max-width: 900px) {
+      justify-content: center;
+
+      h1, p {
+        font-size: 2rem;
+
+        span {
+          font-size: 5rem;
+          margin: 2rem 0 3rem 3rem;
+        }
+      }
+
+      
 
       .ilustration {
         display: none;
@@ -243,7 +279,7 @@ header {
       width: 100%;
     }
 
-    @media screen and (max-width: 1200px) {
+    @media (max-width: 1100px) {
       height: 30.5rem;
       width: 30.5rem;
     }
@@ -268,13 +304,16 @@ header {
     }
   }
 
-  @media screen and (max-width: 900px) {
+  @media (max-width: 1100px) {
     display: flex;
     align-items: center;
-    justify-content: center;
 
     .imageMe {
       display: none;
+    }
+
+    .textAboutMe {
+      max-width: none;
     }
   }
 }

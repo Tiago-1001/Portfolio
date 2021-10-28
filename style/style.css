@@ -12,6 +12,12 @@ html {
   font-size: 62.5%;
 }
 
+@media (max-width: 768px) {
+  html {
+    font-size: 50%;
+  }
+}
+
 body {
   background-color: #151515;
   color: #E8E8E8;
@@ -82,6 +88,19 @@ header .headerContainer h4 {
   text-shadow: 2px 2px 5px #04d361;
 }
 
+header .headerContainer .navMobile {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  header .headerContainer .navMobile {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    cursor: pointer;
+  }
+}
+
 header .headerContainer nav {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -103,7 +122,7 @@ header .headerContainer nav ul {
 
 header .headerContainer nav ul li {
   list-style: none;
-  margin: 0 3rem;
+  margin-left: 6rem;
 }
 
 header .headerContainer nav ul li a {
@@ -139,6 +158,12 @@ header .headerContainer nav ul li a:hover {
 header .headerContainer nav ul li a:hover::before {
   width: 105%;
   opacity: 1;
+}
+
+@media (max-width: 900px) {
+  header .headerContainer nav {
+    display: none;
+  }
 }
 
 #home {
@@ -196,7 +221,7 @@ header .headerContainer nav ul li a:hover::before {
   width: 58rem;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1100px) {
   #home main {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -204,16 +229,34 @@ header .headerContainer nav ul li a:hover::before {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
   }
-  #home main h1 {
-    font-size: 1.5em;
+  #home main h1, #home main p {
+    font-size: 1.5rem;
   }
-  #home main h1 span {
-    font-size: 3em;
+  #home main h1 span, #home main p span {
+    font-size: 3rem;
     margin: 2rem 0 3rem 3rem;
   }
-  #home main p {
-    font-size: 1.5em;
+  #home main .ilustration img {
+    width: 50rem;
+  }
+}
+
+@media (max-width: 900px) {
+  #home main {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  #home main h1, #home main p {
+    font-size: 2rem;
+  }
+  #home main h1 span, #home main p span {
+    font-size: 5rem;
+    margin: 2rem 0 3rem 3rem;
   }
   #home main .ilustration {
     display: none;
@@ -248,7 +291,7 @@ header .headerContainer nav ul li a:hover::before {
   width: 100%;
 }
 
-@media screen and (max-width: 1200px) {
+@media (max-width: 1100px) {
   #about .imageMe {
     height: 30.5rem;
     width: 30.5rem;
@@ -273,7 +316,7 @@ header .headerContainer nav ul li a:hover::before {
   margin: 1.6rem 1.6rem 1.6rem 0;
 }
 
-@media screen and (max-width: 900px) {
+@media (max-width: 1100px) {
   #about {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -281,12 +324,12 @@ header .headerContainer nav ul li a:hover::before {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
   }
   #about .imageMe {
     display: none;
+  }
+  #about .textAboutMe {
+    max-width: none;
   }
 }
 /*# sourceMappingURL=style.css.map */
